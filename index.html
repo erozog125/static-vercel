@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despliegue con Vercel</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background-color: #232a36;
+      display: flex;
+      flex-direction: column;
+      align-items: center;      
+    }
+
+    img {
+      width: 15rem;
+      border-radius: 50%;
+      margin: 2rem;
+      animation: filterLogo 1s infinite;
+      padding: 1rem;
+    }
+
+    h1 {
+      color: #0ab9d4;
+      font-size: 5rem;
+      text-align: center;
+      text-shadow: -5px -5px 5px #ffffff;
+    }
+
+    @keyframes filterLogo {
+      from { box-shadow: 0 0 10px #ffee00; }
+      to { box-shadow: 0 0 20px #ffee00; }
+    }
+  </style>
+  <body>
+    <img src="Logo.jpg" alt="Logotipo">
+    <h1>Haciendo Deploy con Edwin Dev</h1>    
+    <img src="data:image/png;base64,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" alt="Vercel">
+  </body>
+</html>
